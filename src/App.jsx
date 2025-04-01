@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+// Removed custom Button component, using native <button> instead
 import { Github, Linkedin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -41,12 +40,6 @@ const pages = {
       <p>Salesforce, Apex, LWC, JavaScript, HTML, CSS, Git, REST APIs</p>
     </div>
   ),
-  certifications: (
-    <div className="text-center text-xl">
-      <h2 className="text-3xl font-bold mb-2">Certifications</h2>
-      <p>Salesforce Certified Data Cloud Consultant, Salesforce Platform Developer I, Salesforce Admin, and more...</p>
-    </div>
-  ),
 };
 
 export default function Homepage() {
@@ -67,18 +60,14 @@ export default function Homepage() {
 
       <nav className="relative z-10 flex justify-between items-center mb-8">
         <div className="flex gap-4">
-          <Button onClick={() => setCurrentPage("home")} className="hover:scale-105 transition-transform">Home</Button>
-          <Button onClick={() => setCurrentPage("about")} className="hover:scale-105 transition-transform">About Me</Button>
-          <Button onClick={() => setCurrentPage("skills")} className="hover:scale-105 transition-transform">Skills</Button>
-          <Button onClick={() => setCurrentPage("certifications")} className="hover:scale-105 transition-transform">Certifications</Button>
-          <Button className="hover:scale-105 transition-transform" variant="ghost">
-            <Github className="w-5 h-5" />
-          </Button>
-          <Button className="hover:scale-105 transition-transform" variant="ghost">
-            <Linkedin className="w-5 h-5" />
-          </Button>
+          <button onClick={() => setCurrentPage("home")} className="hover:scale-105 transition-transform px-4 py-2 bg-blue-700 rounded">Home</button>
+          <button onClick={() => setCurrentPage("about")} className="hover:scale-105 transition-transform px-4 py-2 bg-blue-700 rounded">About Me</button>
+          <button onClick={() => setCurrentPage("skills")} className="hover:scale-105 transition-transform px-4 py-2 bg-blue-700 rounded">Skills</button>
+          <button onClick={() => setCurrentPage("certifications")} className="hover:scale-105 transition-transform px-4 py-2 bg-blue-700 rounded">Certifications</button>
+          <button className="hover:scale-105 transition-transform p-2 bg-transparent"><Github className="w-5 h-5" /></button>
+          <button className="hover:scale-105 transition-transform p-2 bg-transparent"><Linkedin className="w-5 h-5" /></button>
         </div>
-        <Button className="hover:scale-105 transition-transform" variant="outline">Edit</Button>
+        <button className="hover:scale-105 transition-transform px-4 py-2 border border-white rounded">Edit</button>
       </nav>
 
       <div className="relative z-10 flex justify-center items-center min-h-[60vh]">
